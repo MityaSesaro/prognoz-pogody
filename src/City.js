@@ -7,6 +7,7 @@ import { removeCards } from './store/cardsSlice';
 
 function City() {
     const [results, setResults] = useState([]);
+    if (!localStorage.getItem('CityName')) localStorage.setItem('CityName', '[]')
     const array = JSON.parse(localStorage.getItem('CityName'));
     const dispatch = useDispatch();
     const addCard = useSelector(state => state.addCard.cards);
